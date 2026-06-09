@@ -228,6 +228,7 @@ erDiagram
         int quantidade_total
         int quantidade_disponivel
         boolean ativo
+        varchar foto
     }
     LOCACOES {
         int id PK
