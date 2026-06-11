@@ -27,6 +27,7 @@
         'arquivo_grande'   => 'A imagem não pode ultrapassar 4 MB.',
         'filme_locado'     => 'Não é possível desativar: o filme possui locação ativa.',
         'id_invalido'      => 'ID inválido.',
+        'titulo_duplicado' => 'O título já existe no catálogo.',
     ];
 
     // Pega os filmes do banco de dados para exibir na tela em ordem alfabetica

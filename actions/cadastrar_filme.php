@@ -14,6 +14,16 @@ if ($titulo === '' || $genero === '' || $total < 1) {
     exit;
 }
 
+// verifica se o titulo já existe no banco de dados
+$stmt = $pdo->prepare("SELECT id FROM filmes WHERE LOWER(titulo) = LOWER(?)");
+// usa o "lower" para deixar tudo minusculo para não deixar passar um titulo igual, mas em maiusculo
+$stmt->execute([$titulo]);
+
+if ($stmt->rowCount() > 0) {
+    header("Location: ../index.php?erro=titulo_duplicado");
+    exit;
+}
+
 // upload de imagem
 
 // começa nula
