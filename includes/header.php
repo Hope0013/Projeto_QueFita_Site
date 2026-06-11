@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-
+    <!-- header separado para ser incluido nas outras duas paginas principais. failitando na hora de programar e deixando os codigos menores e mais organizados -->
     <div class="appBar">
         <img src="uploads/imagens/QueFita.png" alt="Logo Que Fita">
         

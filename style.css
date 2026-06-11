@@ -2,13 +2,14 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* colocamos variaveis nas cores para facilitar na hora de usa-las */
 :root {
     --bg:          #0e0e0f;
     --surface:     #1a1a1c;
     --surface2:    #242427;
     --border:      #2e2e32;
-    --accent:      #008cff; 
-    --accent-dim:  #2862b8;
+    --accent:      #0099ff; 
+    --accent-dim:  #2883b8;
     --danger:      #e8503a;
     --success:     #3acd87;
     --text:        #f0ede8;
@@ -340,7 +341,6 @@ tbody td { padding: .75rem 1rem; vertical-align: middle; }
 }
 .status-radio input { accent-color: var(--accent); }
 
-/* ── Alertas ─────────────────────────────────────── */
 .alerta {
     padding: .75rem 1rem;
     border-radius: var(--radius);
@@ -350,7 +350,6 @@ tbody td { padding: .75rem 1rem; vertical-align: middle; }
 .alerta-ok    { background: rgba(58,205,135,.12); border: 1px solid rgba(58,205,135,.3); color: var(--success); }
 .alerta-erro  { background: rgba(232,80,58,.12);  border: 1px solid rgba(232,80,58,.3);  color: var(--danger); }
 
-/* ── Upload de imagem ────────────────────────────── */
 .upload-area {
     border: 2px dashed var(--border);
     border-radius: var(--radius);
@@ -370,7 +369,7 @@ tbody td { padding: .75rem 1rem; vertical-align: middle; }
     margin-top: .5rem;
 }
 
-/* ── Responsivo ──────────────────────────────────── */
+/* responsividade */
 @media (max-width: 600px) {
     .form-linha { grid-template-columns: 1fr; }
     .grade-filmes { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
