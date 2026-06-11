@@ -231,7 +231,6 @@ input[type="submit"]:hover, .btn-primario:hover { opacity: .88; transform: trans
 .badge-disp.ok  { background: rgba(58,205,135,.15); color: var(--success); }
 .badge-disp.sem { background: rgba(232,80,58,.15);  color: var(--danger); }
 
-/* ── Modal ───────────────────────────────────────── */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -292,7 +291,6 @@ input[type="submit"]:hover, .btn-primario:hover { opacity: .88; transform: trans
     flex-wrap: wrap;
 }
 
-/* ── Tabela de locações ──────────────────────────── */
 .tabela-wrapper {
     overflow-x: auto;
     border: 1px solid var(--border);
