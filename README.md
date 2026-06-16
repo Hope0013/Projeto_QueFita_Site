@@ -27,7 +27,7 @@ Para configurar e executar o sistema **Que Fita** em seu ambiente local, siga os
 Abra o terminal e execute:
 
 ```bash
-git clone https://github.com/Hope0013/Projeto_QueFita_Site
+git clone https://github.com/Hope0013/Projeto_QueFita_Site.git
 cd que-fita
 ```
 
