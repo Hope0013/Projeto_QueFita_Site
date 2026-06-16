@@ -16,14 +16,6 @@ if ($id < 1 || $titulo === '' || $genero === '' || $total < 0 || $disp < 0) {
     exit;
 }
 
-// verifica o titulo, para não permitir titulo dupliado
-$stmt = $pdo->prepare("SELECT id FROM filmes WHERE LOWER(titulo) = LOWER(?)");
-$stmt->execute([$titulo]);
-if ($stmt->rowCount() > 0) {
-    header("Location: ../index.php?erro=titulo_duplicado");
-    exit;
-}
-
 // a quantidade disponivel nao pode ser maior que o total de copias
 if ($disp > $total) { $disp = $total; }
 

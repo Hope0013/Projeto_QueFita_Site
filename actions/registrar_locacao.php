@@ -5,8 +5,10 @@ require_once '../conexao.php';
 $filme_id    = (int)($_POST['filme_id']    ?? 0);
 $nome        = trim($_POST['nome']         ?? '');
 $data_loc    = $_POST['data_locacao']      ?? '';
-$data_dev    = $_POST['data_devolucao']    ?? '';
 
+$data = new DateTime($data_loc);
+$data->modify('+7 days');
+$data_dev = $data->format('Y-m-d'); // Data de locação + 7 dias
 // pega os parametros do form
 
 // validando campos obrigatorios e numericos
@@ -27,6 +29,8 @@ if (!$filme || $filme['quantidade_disponivel'] < 1) {
 }
 
 // o 'beginTransaction' desativa o salvamento automático do bd, garantindo que se uma das operações falhar, nada será alterado
+$pdo->beginTransaction();
+
 try {
     $ins = $pdo->prepare(
         // insere o novo registro na tabela "locacoes" e o status de pagamento vem como nao pago e o status de devolução vem com pendente
@@ -51,7 +55,7 @@ try {
 
 } catch (Exception $e) {
     // se tiver qualquer erro dentro do "try", o "rollBack" desfaz tudo
-    $pdo->rollBack();
+    { $pdo->rollBack(); }
     header('Location: ../locacoes.php?erro=transacao_falhou');
     exit;
 }

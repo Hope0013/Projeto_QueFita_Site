@@ -87,11 +87,12 @@
                     <!-- a data de locação é preenchida automaticamente com a data atual -->
                     <label for="data_locacao">Data de Locação</label>
                     <input type="date" name="data_locacao" id="data_locacao"
-                           value="<?= date('Y-m-d') ?>" required>
+                           value="<?= date('Y-m-d') ?>" readonly>
                 </div>
                 <div class="espaco-form">
                     <label for="data_devolucao">Data de Devolução Prevista</label>
-                    <input type="date" name="data_devolucao" id="data_devolucao" required>
+                    <input type="date" name="data_devolucao" id="data_devolucao" 
+                    value="<?php $hoje = new DateTime(); $hoje->modify('+7 days'); echo $hoje->format('Y-m-d'); ?>" readonly>
                 </div>
             </div>
 
