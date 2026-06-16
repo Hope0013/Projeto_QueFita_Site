@@ -7,9 +7,120 @@
 
 ---
 
-## 1. Introdução
+# 1. Introdução
 
-### 1.1 Propósito
+## 1.1 Instruções de Uso
+
+Para configurar e executar o sistema **Que Fita** em seu ambiente local, siga os passos abaixo.
+
+## Pré-requisitos
+
+* **Git** instalado;
+* **PHP 8.0+** (com as extensões `pdo` e `pdo_pgsql` habilitadas);
+* **PostgreSQL 14+** instalado e em execução;
+* **Visual Studio Code** (opcional, recomendado para edição do projeto).
+
+---
+
+## Passo 1: Clonar o Repositório
+
+Abra o terminal e execute:
+
+```bash
+git clone https://github.com/Hope0013/Projeto_QueFita_Site
+cd que-fita
+```
+
+---
+
+## Passo 2: Criar o Banco de Dados
+
+Caso o banco de dados ainda não exista, crie-o com o comando:
+
+```bash
+createdb -U seu_usuario locadora
+```
+
+Substitua `seu_usuario` pelo seu usuário do PostgreSQL.
+
+---
+
+## Passo 3: Importar o Banco de Dados
+
+O projeto disponibiliza um arquivo de dump contendo toda a estrutura e os dados necessários.
+
+Execute:
+
+```bash
+psql -U seu_usuario -d locadora -f dump_locadora.sql
+```
+
+---
+
+## Passo 4: Configurar a Conexão com o Banco
+
+Localize o arquivo:
+
+```text
+conexao.php
+```
+
+E atualize as credenciais conforme o seu ambiente:
+
+```php
+$host = 'localhost';
+$db = 'locadora';
+$user = 'seu_usuario';
+$pass = 'sua_senha';
+```
+
+---
+
+## Passo 5: Executar o Sistema
+
+No terminal, dentro da pasta do projeto, execute:
+
+```bash
+php -S localhost:8000
+```
+
+O servidor local será iniciado.
+
+Abra o navegador e acesse:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## Estrutura do Projeto
+
+```text
+que_fita/
+│
+├── dump_locadora.sql
+├── index.php
+├── locacoes.php
+├── conexao.php
+├── uploads/
+│   └── imagens/
+├── includes/
+└── actions/
+```
+
+---
+
+## Observações
+
+* Certifique-se de que o PostgreSQL esteja em execução antes de importar o banco de dados.
+* Verifique se as extensões `pdo` e `pdo_pgsql` estão habilitadas no PHP.
+* Caso a pasta `uploads/imagens` não exista, crie-a manualmente.
+* Se estiver utilizando Apache ou XAMPP, o projeto também pode ser executado diretamente na pasta do servidor web.
+* O arquivo `dump_locadora.sql` contém a estrutura e os dados necessários para o funcionamento do sistema.
+
+
+### 1.2 Propósito
 
 Este documento descreve os requisitos do sistema **Que Fita**, com objetivo de:
 
@@ -19,7 +130,7 @@ Este documento descreve os requisitos do sistema **Que Fita**, com objetivo de:
 
 ---
 
-### 1.2 Escopo
+### 1.3 Escopo
 
 O sistema consistirá em um painel interno para funcionários que permitirá:
 
@@ -36,7 +147,7 @@ O sistema será uma aplicação web estruturada com:
 
 ---
 
-### 1.3 Definições
+### 1.4 Definições
 
 | Termo | Definições |
 | --- | --- |
@@ -54,7 +165,7 @@ O sistema será uma aplicação web estruturada com:
 
 ---
 
-### 1.4 Visão Geral do Documento
+### 1.5 Visão Geral do Documento
 
 Este documento está organizado em:
 
