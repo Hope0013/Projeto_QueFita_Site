@@ -57,8 +57,20 @@
                     <input type="text" name="titulo" id="titulo" placeholder="Ex.: Harry Potter" required>
                 </div>
                 <div class="espaco-form">
-                    <label for="genero">Gênero</label>
-                    <input type="text" name="genero" id="genero" placeholder="Ex.: Ação, Drama..." required>
+                    <select name="genero" id="edit_genero" required>
+                        <option value="" disabled selected>Selecione um gênero</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comédia">Comédia</option>
+                        <option value="Documentário">Documentário</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Ficção Científica">Ficção Científica</option>
+                        <option value="Musical">Musical</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Outro">Outro</option>
+                    </select>
                 </div>
             </div>
 
@@ -163,8 +175,20 @@
             </div>
 
             <div class="espaco-form">
-                <label for="edit_genero">Gênero</label>
-                <input type="text" name="genero" id="edit_genero" required>
+                <select name="genero" id="edit_genero" required>
+                    <option value="" disabled selected>Selecione um gênero</option>
+                    <option value="acao">Ação</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="documentario">Documentário</option>
+                    <option value="drama">Drama</option>
+                    <option value="fantasia">Fantasia</option>
+                    <option value="scifi">Ficção Científica</option>
+                    <option value="musical">Musical</option>
+                    <option value="romance">Romance</option>
+                    <option value="terror">Terror</option>
+                    <option value="outro">Outro</option>
+                </select>
             </div>
 
             <div class="form-linha">
