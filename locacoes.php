@@ -78,7 +78,7 @@
                 <div class="espaco-form">
                     <label for="nome">Nome do Cliente</label>
                     <input type="text" name="nome" id="nome"
-                           placeholder="Nome completo..." minlength="3" maxlength="40" required>
+                           placeholder="Nome completo..." minlength="1" maxlength="40" required>
                 </div>
             </div>
 

@@ -54,7 +54,7 @@
             <div class="form-linha">
                 <div class="espaco-form">
                     <label for="titulo">Título do Filme</label>
-                    <input type="text" name="titulo" id="titulo" placeholder="Ex.: Harry Potter" required>
+                    <input type="text" name="titulo" id="titulo" placeholder="Ex.: Harry Potter" minlength="1" maxlength="40" required>
                 </div>
                 <div class="espaco-form">
                     <select name="genero" id="edit_genero" required>
@@ -171,7 +171,7 @@
 
             <div class="espaco-form">
                 <label for="edit_titulo">Título</label>
-                <input type="text" name="titulo" id="edit_titulo" required>
+                <input type="text" name="titulo" id="edit_titulo" minlength="1" maxlength="40" required>
             </div>
 
             <div class="espaco-form">
